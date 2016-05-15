@@ -32,3 +32,10 @@ def elastic():
        owner=params.elastic_user,
        group=params.user_group
     )
+    File(format("/etc/sysconfig/elasticsearch"),
+       content=Template(
+                        "elasticsearch.sysconfig.j2",
+                        configurations = configurations),
+       owner="root",
+       group="root"
+    )

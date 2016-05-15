@@ -17,7 +17,7 @@ class ServiceCheck(Script):
 	print("Running Elastic search  service check", file=sys.stdout)
         # There is a race condition by the time the BDSE server starts and service checks.  Hence added the below sleep for 30 seconds
         time.sleep(30)
-	r = urllib2.urlopen('http://localhost:9200/') 
+	r = urllib2.urlopen('http://localhost:19200/') 
 
         if r.getcode() == 200:
 	    print(r.json(), file=sys.stdout)

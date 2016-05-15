@@ -16,7 +16,8 @@ node:
   name: {{hostname}}
 path:
   data: {{path_data}} 
-port: {{http_port}}
+http:
+  port: {{http_port}}
 discovery.zen.ping.unicast.hosts:
                            ["{{node_master1}}:{{transport_tcp_port}}","{{node_master2}}:{{transport_tcp_port}}","{{node_master3}}:{{transport_tcp_port}}"]
 transport:
